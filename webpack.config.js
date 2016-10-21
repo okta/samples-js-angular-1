@@ -1,28 +1,40 @@
+/* eslint import/no-unresolved:0 import/no-extraneous-dependencies:0 */
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: [
     'babel-polyfill',
-    './app/js/main',
+    './app/js/main-app',
   ],
   output: {
-    path: path.resolve(__dirname, 'app'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'app.js',
+    library: 'app',
   },
   devtool: 'source-map',
-  devServer: {
-    contentBase: './app',
-    inline: true,
-  },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: 'app' },
+      { from: 'node_modules/@okta/okta-signin-widget/dist/css', to: 'css' },
+      { from: 'node_modules/@okta/okta-signin-widget/dist/font', to: 'font' },
+      { from: 'node_modules/@okta/okta-signin-widget/dist/img', to: 'img' },
+    ]),
+  ],
   module: {
     loaders: [
       {
+        loader: 'babel-loader',
         test: /\.js$/,
         include: path.join(__dirname, 'app'),
-        loader: 'babel-loader',
         query: {
           presets: ['es2015'],
         },
+      },
+      {
+        test: /\.hbs$/,
+        loader: 'handlebars-loader',
+        include: path.join(__dirname, 'app'),
       },
     ],
   },

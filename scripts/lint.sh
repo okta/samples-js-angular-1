@@ -1,21 +1,20 @@
 #!/bin/bash -vx
 
-echo "Starting lint.sh"
-
 cd ${OKTA_HOME}/${REPO}
-pwd -P
 
 export TEST_SUITE_TYPE="checkstyle"
 export TEST_RESULT_FILE_DIR="${REPO}/build2/reports/lint"
 
 if ! npm install; then
-  echo "Npm install failed! Exiting..."
+  echo "npm install failed! Exiting..."
   exit ${FAILED_SETUP}
 fi
 
 if ! npm run lint:report; then
-  echo "Lint failed! Exiting..."
+  echo "lint failed! Exiting..."
   exit ${TEST_FAILURE}
 fi
 
-exit ${SUCCESS}
+echo $TEST_SUITE_TYPE > $TEST_SUITE_TYPE_FILE
+echo $TEST_RESULT_FILE_DIR > $TEST_RESULT_FILE_DIR_FILE
+exit $PUBLISH_TYPE_AND_RESULT_DIR;

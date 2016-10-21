@@ -15,5 +15,3 @@ Sample: JS + Angular 1
 | npm run lint | Run linting on source files
 
 ---
-
-:space_invader: *Generated with [@okta/samples@0.0.1](https://github.com/okta/generator-samples)*
