@@ -1,0 +1,30 @@
+{
+  "name": "@okta/samples-js-angular-1",
+  "publishConfig": {
+    "registry": "https://artifacts.aue1d.saasure.com/artifactory/api/npm/npm-okta"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/okta/samples-js-angular-1",
+  "scripts": {
+    "lint:report": "eslint -f checkstyle -o build2/reports/lint/eslint-checkstyle-result.xml --ignore-path .gitignore .",
+    "lint": "eslint .",
+    "start": "webpack-dev-server --config webpack.config.js"
+  },
+  "dependencies": {
+    "@okta/okta-auth-js": "^1.5.0",
+    "@okta/okta-signin-widget": "^1.8.0",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "devDependencies": {
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1"
+  }
+}
