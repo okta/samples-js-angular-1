@@ -1,0 +1,51 @@
+{
+  "name": "@okta/samples-js-angular-1",
+  "version": "0.0.1",
+  "publishConfig": {
+    "registry": "https://artifacts.aue1d.saasure.com/artifactory/api/npm/npm-okta"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/okta/samples-js-angular-1.git"
+  },
+  "bugs": "https://github.com/okta/samples-js-angular-1/issues",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/okta/samples-js-angular-1",
+  "scripts": {
+    "test": "webdriver-manager update && protractor test/e2e/conf.js",
+    "lint:report": "eslint -f checkstyle -o build2/reports/lint/eslint-checkstyle-result.xml --ignore-path .gitignore .",
+    "lint": "eslint --ignore-path .gitignore .",
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --config webpack.config.js",
+    "ci-update-package": "ci-update-package",
+    "ci-pkginfo:dataload": "ci-pkginfo -t dataload"
+  },
+  "files": [
+    "dist"
+  ],
+  "optionalDependencies": {
+    "@okta/ci-update-package": "1.4.0",
+    "@okta/ci-pkginfo": "1.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "chalk": "1.1.3",
+    "copy-webpack-plugin": "^4.0.0",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.5.0",
+    "jasmine-reporters": "2.2.0",
+    "protractor": "4.0.4",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "@okta/okta-auth-js": "^1.5.0",
+    "@okta/okta-signin-widget": "^1.8.0"
+  }
+}
