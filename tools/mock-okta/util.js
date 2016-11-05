@@ -56,8 +56,9 @@ function toString(val) {
  * @arg {object} after - the transformed object
  */
 function logDiff(title, before, after) {
+  const cols = process.stdout.columns || 100;
   const keyWidth = 25;
-  const valWidth = process.stdout.columns - keyWidth - 5;
+  const valWidth = cols - keyWidth - 5;
   const table = new Table({ colWidths: [keyWidth, valWidth] });
 
   // Find diffs for the keys that exist in the before object
@@ -128,8 +129,9 @@ util.mapRequestToCache = (req) => {
   headers['user-agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; ' +
     'rv:48.0) Gecko/20100101 Firefox/48.0';
 
-  // Enforce a consistent accept-language
+  // Enforce a consistent accept-language and encoding
   headers['accept-language'] = 'en-US';
+  headers['accept-encoding'] = 'gzip';
 
   // Remove cookies that update values on every request
   headers.cookie = headers.cookie || '';

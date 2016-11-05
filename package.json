@@ -13,7 +13,7 @@
   "homepage": "https://github.com/okta/samples-js-angular-1",
   "scripts": {
     "test": "webdriver-manager update && protractor test/e2e/conf.js",
-    "mock-okta": "node tools/mock-okta",
+    "mock-okta": "DEBUG=mock-okta node tools/mock-okta",
     "mock-okta:debug": "DEBUG=mock-okta npm run mock-okta",
     "lint:report": "eslint -f checkstyle -o build2/reports/lint/eslint-checkstyle-result.xml --ignore-path .gitignore .",
     "lint": "eslint --ignore-path .gitignore .",
