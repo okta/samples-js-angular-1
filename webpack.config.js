@@ -5,12 +5,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: [
     'babel-polyfill',
-    './app/js/main-app',
+    './app/app.js',
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'app.js',
-    library: 'app',
+    filename: 'bundle.js',
+    library: 'bundle',
   },
   devtool: 'source-map',
   plugins: [

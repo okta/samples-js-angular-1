@@ -5,12 +5,13 @@
   <title>App</title>
   <link href="/css/okta-sign-in.min.css" type="text/css" rel="stylesheet"/>
   <link href="/css/okta-theme.css" type="text/css" rel="stylesheet"/>
-  <script src="/webpack-dev-server.js"></script>
-  <script src="/app.js"></script>
+  <base href="/"/>
 </head>
 <body>
   <div id="app-container"></div>
 
+  <script src="/webpack-dev-server.js"></script>
+  <script src="/bundle.js"></script>
   <script>
     var options = {
       container: '#app-container',
@@ -28,8 +29,7 @@
       };
     {{/user}}
 
-    app.start(options);
+    bundle.bootstrap(options);
   </script>
-
 </body>
 </html>

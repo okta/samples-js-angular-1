@@ -26,7 +26,7 @@ handlers.scenarios = (req, res) => {
  */
 handlers.loginRedirect = (req, res) => {
   if (req.session.user) {
-    res.redirect(302, '/authorization-code/app');
+    res.redirect(302, '/authorization-code/profile');
     return;
   }
 
@@ -50,7 +50,7 @@ handlers.loginRedirect = (req, res) => {
  */
 handlers.loginCustom = (req, res) => {
   if (req.session.user) {
-    res.redirect(302, '/authorization-code/app');
+    res.redirect(302, '/authorization-code/profile');
     return;
   }
 
@@ -67,9 +67,9 @@ handlers.loginCustom = (req, res) => {
  * Basic app logged-in state. This is protected by the session cookie, which is
  * only set when a successful auth to Okta has finished.
  *
- * Route: /authorization-code/app
+ * Route: /authorization-code/profile
  */
-handlers.app = (req, res) => {
+handlers.profile = (req, res) => {
   if (!req.session.user) {
     res.redirect(302, '/');
     return;
@@ -217,6 +217,6 @@ handlers.callback = (req, res) => {
 
     // Now that the session cookie is set, we can navigate to the logged-in
     // app page.
-    res.redirect(302, '/authorization-code/app');
+    res.redirect(302, '/authorization-code/profile');
   });
 };
