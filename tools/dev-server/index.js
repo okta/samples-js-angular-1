@@ -35,8 +35,6 @@ const server = new WebpackDevServer(webpack(webpackConfig), {
     // These are the routes that need to be implemented to handle the
     // authorization code scenarios
     app.get('/', handlers.scenarios);
-    app.get('/scenario-list', handlers.scenarios);
-    app.get('/scenarios', handlers.scenarios);
     app.get('/authorization-code/login-redirect', handlers.loginRedirect);
     app.get('/authorization-code/login-custom', handlers.loginCustom);
     app.get('/authorization-code/profile', handlers.profile);
