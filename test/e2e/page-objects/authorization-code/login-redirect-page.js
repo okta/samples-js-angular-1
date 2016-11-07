@@ -10,6 +10,7 @@ class LoginRedirectPage {
   }
 
   login(username, password) {
+    util.wait(this.$loginLink);
     this.$loginLink.click();
     const signIn = new OktaSignInPage();
     signIn.waitForPageLoad();
