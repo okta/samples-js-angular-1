@@ -1,5 +1,5 @@
 import OktaAuth from '@okta/okta-auth-js/jquery';
-import template from './app-code.hbs';
+import template from './profile.hbs';
 
 export default function render(config) {
   const auth = new OktaAuth({ url: config.oktaUrl });
