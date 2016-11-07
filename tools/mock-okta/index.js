@@ -43,6 +43,13 @@ const store = {};
 // Helper functions
 
 /**
+ * Gets cookie name from a cookie string
+ */
+function getCookieName(cookieStr) {
+  return cookieStr.split('=')[0].trim();
+}
+
+/**
  * Helper function that transforms and sends the response headers
  */
 function sendHeaders(res, headers, data, setHeader) {
@@ -51,17 +58,39 @@ function sendHeaders(res, headers, data, setHeader) {
   }
 
   // If data.cookies exists, it means that we need to delete them in the
-  // response headers
+  // response headers unless they are already being set by the server
   if (data.cookie) {
-    const cookies = data.cookie.split(';').map((str) => {
-      const parts = str.split('=');
-      const name = parts[0];
-      return `${name}=deleted; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT`;
-    });
     if (!headers['set-cookie']) {
       headers['set-cookie'] = [];
     }
-    headers['set-cookie'] = cookies.concat(headers['set-cookie']);
+
+    // Construct a map of cookies that are being set on this response
+    const resCookies = {};
+    headers['set-cookie'].forEach((cookieStr) => {
+      resCookies[getCookieName(cookieStr)] = true;
+    });
+
+    debug('Cookies that are being set by the server in the response:');
+    debug(headers['set-cookie']);
+    debug(resCookies);
+
+    debug('Cookies that we want to delete from the incoming request:');
+    debug(data.cookie);
+
+    const deleteCookies = data.cookie.split(';')
+      .filter(cookieStr => !resCookies[getCookieName(cookieStr)])
+      .map((cookieStr) => {
+        const name = getCookieName(cookieStr);
+        return `${name}=deleted; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+      });
+
+    debug('Cookies that we will actually delete after comparison:');
+    debug(deleteCookies);
+
+    headers['set-cookie'] = deleteCookies.concat(headers['set-cookie']);
+
+    debug('Final set cookies value');
+    debug(headers['set-cookie']);
   }
 
   // Transform and send the headers
@@ -97,7 +126,7 @@ function transform(req, res, next) {
   if (data.isAuthorizeReq) {
     debug('/authorize reqest, storing data');
     debug(data);
-    store[data.state] = data;
+    store[data.state] = { state: data.state, nonce: data.nonce };
   }
 
   // Retrieve stored data when okta_key is present - this is needed in the
@@ -141,7 +170,7 @@ function transform(req, res, next) {
     if (data.isAuthorizeReq && data.responseMode === 'query' && redirectQuery.okta_key) {
       debug(`Storing okta_key properties: ${redirectQuery.okta_key}`);
       debug(data);
-      store[redirectQuery.okta_key] = data;
+      store[redirectQuery.okta_key] = { state: data.state, nonce: data.nonce };
     }
 
     // Store data if we're redirecting to the redirectUri in preparation for

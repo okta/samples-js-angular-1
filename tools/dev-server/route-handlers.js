@@ -14,6 +14,14 @@ const handlers = module.exports = {};
  * Route: /
  */
 handlers.scenarios = (req, res) => {
+  // This would normally not be necessary, but the SignIn Widget is currently
+  // using an older version of AuthJs, which uses a different cookie for
+  // setting the state and nonce values.
+  res.clearCookie('okta-oauth-nonce');
+  res.clearCookie('okta-oauth-state');
+  res.clearCookie('okta-oauth-redirect-params');
+  res.clearCookie('okta-oauth-redirect-params', { path: '/authorization-code' });
+
   res.render('index', { oidc: config.oidc });
 };
 
@@ -29,13 +37,6 @@ handlers.loginRedirect = (req, res) => {
     res.redirect(302, '/authorization-code/profile');
     return;
   }
-
-  // This would normally not be necessary, but the SignIn Widget is currently
-  // using an older version of AuthJs, which uses a different cookie for
-  // setting the state and nonce values.
-  res.clearCookie('okta-oauth-nonce');
-  res.clearCookie('okta-oauth-state');
-  res.clearCookie('okta-oauth-redirect-params');
   res.render('index', { oidc: config.oidc });
 };
 
@@ -53,13 +54,6 @@ handlers.loginCustom = (req, res) => {
     res.redirect(302, '/authorization-code/profile');
     return;
   }
-
-  // This would normally not be necessary, but the SignIn Widget is currently
-  // using an older version of AuthJs, which uses a different cookie for
-  // setting the state and nonce values.
-  res.clearCookie('okta-oauth-nonce');
-  res.clearCookie('okta-oauth-state');
-  res.clearCookie('okta-oauth-redirect-params');
   res.render('index', { oidc: config.oidc });
 };
 
@@ -74,6 +68,15 @@ handlers.profile = (req, res) => {
     res.redirect(302, '/');
     return;
   }
+
+  // This would normally not be necessary, but the SignIn Widget is currently
+  // using an older version of AuthJs, which uses a different cookie for
+  // setting the state and nonce values.
+  res.clearCookie('okta-oauth-nonce');
+  res.clearCookie('okta-oauth-state');
+  res.clearCookie('okta-oauth-redirect-params');
+  res.clearCookie('okta-oauth-redirect-params', { path: '/authorization-code' });
+
   res.render('index', { user: req.session.user, oidc: config.oidc });
 };
 
