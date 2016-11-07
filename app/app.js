@@ -1,26 +1,23 @@
-/* eslint no-console:0 */
-import renderScenarios from './scenarios';
-import renderProfile from './profile';
-import renderLoginRedirectOkta from './login-redirect';
-import renderLoginCustom from './login-custom';
+import angular from 'angular';
+import uiRouter from 'angular-ui-router';
+import AppComponent from './app.component';
+import Components from './components';
 
 export function bootstrap(config) {
-  switch (window.location.pathname) {
-    case '/':
-      renderScenarios(config);
-      break;
-    case '/authorization-code/profile':
-      renderProfile(config);
-      break;
-    case '/authorization-code/login-redirect':
-      renderLoginRedirectOkta(config);
-      break;
-    case '/authorization-code/login-custom':
-      renderLoginCustom(config);
-      break;
-    default:
-      break;
-  }
+  const containerEl = document.querySelector(config.container);
+  angular.element(containerEl).html('<app></app>');
+
+  const app = angular
+    .module('app', [Components, uiRouter])
+    .constant('config', config)
+    .component('app', AppComponent)
+    .config(($urlRouterProvider, $locationProvider) => {
+      $locationProvider.html5Mode(true);
+      $urlRouterProvider.otherwise('/');
+    })
+    .name;
+
+  angular.bootstrap(document, [app]);
 }
 
 export default bootstrap;
