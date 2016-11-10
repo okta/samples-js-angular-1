@@ -26,4 +26,10 @@ if ! npm publish --registry ${REGISTRY}; then
   exit $PUBLISH_ARTIFACTORY_FAILURE
 fi
 
+DATALOAD=$(npm run ci-pkginfo:dataload --silent)
+if ! artifactory_curl -X PUT -u ${ARTIFACTORY_CREDS} ${DATALOAD} -v -f; then
+  echo "artifactory_curl failed! Exiting..."
+  exit $PUBLISH_ARTIFACTORY_FAILURE
+fi
+
 exit $SUCCESS
