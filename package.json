@@ -1,6 +1,6 @@
 {
   "name": "@okta/samples-js-angular-1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publishConfig": {
     "registry": "https://artifacts.aue1d.saasure.com/artifactory/api/npm/npm-okta"
   },
