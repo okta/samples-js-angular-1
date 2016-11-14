@@ -1,6 +1,6 @@
 {
   "name": "@okta/samples-js-angular-1",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publishConfig": {
     "registry": "https://artifacts.aue1d.saasure.com/artifactory/api/npm/npm-okta"
   },
@@ -62,9 +62,5 @@
     "webpack": "1.13.3",
     "webpack-dev-server": "1.16.2",
     "yakbak": "2.5.0"
-  },
-  "dependencies": {
-    "@okta/okta-auth-js": "1.6.0",
-    "@okta/okta-signin-widget": "1.8.0"
   }
 }
