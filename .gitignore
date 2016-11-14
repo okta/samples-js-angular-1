@@ -2,5 +2,5 @@ build2
 node_modules
 dist
 npm-debug.log
-travis_phantom
+travis_phantomjs
 .DS_Store
