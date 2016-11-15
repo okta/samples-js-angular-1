@@ -19,7 +19,7 @@
     "lint": "eslint --ignore-path .gitignore .",
     "build": "webpack --config webpack.config.js",
     "start": "node tools/dev-server",
-    "wrap": "(rm npm-shrinkwrap.json || true) && npm shrinkwrap --dev && node tools/post-shrinkwrap",
+    "wrap": "node tools/wrap-dependencies",
     "ci-update-package": "ci-update-package",
     "ci-pkginfo:dataload": "ci-pkginfo -t dataload"
   },

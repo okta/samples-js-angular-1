@@ -1851,7 +1851,7 @@
       "dev": true
     },
     "invariant": {
-      "version": "2.2.1",
+      "version": "2.2.2",
       "dev": true
     },
     "invert-kv": {
@@ -2051,7 +2051,7 @@
       "dev": true
     },
     "jsx-ast-utils": {
-      "version": "1.3.3",
+      "version": "1.3.4",
       "dev": true
     },
     "kind-of": {
