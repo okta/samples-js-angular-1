@@ -20,7 +20,8 @@
     "build": "webpack --config webpack.config.js",
     "start": "node tools/dev-server",
     "ci-update-package": "ci-update-package",
-    "ci-pkginfo:dataload": "ci-pkginfo -t dataload"
+    "ci-pkginfo:dataload": "ci-pkginfo -t dataload",
+    "wrap": "node tools/wrap-dependencies"
   },
   "files": [
     "dist"
@@ -30,6 +31,8 @@
     "@okta/ci-pkginfo": "1.2.0"
   },
   "devDependencies": {
+    "@okta/okta-auth-js": "1.6.0",
+    "@okta/okta-signin-widget": "1.8.0",
     "angular": "1.5.8",
     "angular-ui-router": "1.0.0-beta.3",
     "babel-core": "6.18.2",
@@ -60,9 +63,5 @@
     "webpack": "1.13.3",
     "webpack-dev-server": "1.16.2",
     "yakbak": "2.5.0"
-  },
-  "dependencies": {
-    "@okta/okta-auth-js": "1.6.0",
-    "@okta/okta-signin-widget": "1.8.0"
   }
 }

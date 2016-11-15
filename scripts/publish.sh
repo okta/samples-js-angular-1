@@ -2,14 +2,9 @@
 
 REGISTRY="https://artifacts.aue1d.saasure.com/artifactory/api/npm/npm-okta"
 
-cd ${OKTA_HOME}/${REPO}
+source $OKTA_HOME/$REPO/scripts/setup.sh
 
 export TEST_SUITE_TYPE="build"
-
-if ! npm install; then
-  echo "npm install failed! Exiting..."
-  exit $FAILED_SETUP
-fi
 
 if ! npm run ci-update-package -- --branch ${BRANCH}; then
   echo "ci-update-package failed! Exiting..."

@@ -6,8 +6,9 @@
     "redirectUri": "http://localhost:3000/authorization-code/callback"
   },
   "server": {
-    "port": 3000,
-    "startSignal": "bundle is now VALID"
+    "staticDir": "dist",
+    "startSignal": "bundle is now VALID",
+    "port": 3000
   },
   "mockOkta": {
     "port": 7777,
