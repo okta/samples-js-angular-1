@@ -1,4 +1,4 @@
-Sample: JS + Angular 1
+TEST: Sample: JS + Angular 1
 ======
 
 ## End to end repos
