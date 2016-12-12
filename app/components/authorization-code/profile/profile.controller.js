@@ -16,6 +16,7 @@ class ProfileController {
 
   constructor(config) {
     this.user = config.user;
+    this.oktaUrl = config.oktaUrl;
   }
 
   $onInit() {
@@ -24,7 +25,7 @@ class ProfileController {
     this.iatFormatted = new Date(this.user.iat * 1000);
     this.exp = this.user.exp;
     this.expFormatted = new Date(this.user.exp * 1000);
-    this.authClient = new OktaAuth({ url: 'http://127.0.0.1:7777' });
+    this.authClient = new OktaAuth({ url: this.oktaUrl });
   }
 
   logout() {
