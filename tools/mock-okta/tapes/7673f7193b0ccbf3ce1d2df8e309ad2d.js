@@ -1,7 +1,7 @@
 var path = require("path");
 
 /**
- * GET /oauth2/v1/authorize?client_id=5VNm1xZ6tnr8aDeGrHWf&redirect_uri=http://localhost:3000/authorization-code/callback&response_type=code&response_mode=query&state=STATE&nonce=NONCE&scope=openid email
+ * GET /oauth2/v1/authorize?client_id=zYVNoNIeSwul32vpNiOz&redirect_uri=http://localhost:3000/authorization-code/callback&response_type=code&response_mode=query&state=STATE&nonce=NONCE&scope=openid email
  *
  * host: rain.okta1.com:1802
  * connection: keep-alive
@@ -17,20 +17,20 @@ module.exports = function (req, res) {
   res.statusCode = 302;
 
   res.setHeader("server", "Apache-Coyote/1.1");
-  res.setHeader("x-okta-request-id", "reqRyHBcMb9Q6e5y9qis3V9Bw");
+  res.setHeader("x-okta-request-id", "reqSoMQFzpIRsmBhO297WPvQg");
   res.setHeader("x-rate-limit-limit", "10000");
   res.setHeader("x-rate-limit-remaining", "9999");
-  res.setHeader("x-rate-limit-reset", "1478388288");
+  res.setHeader("x-rate-limit-reset", "1481839882");
   res.setHeader("p3p", "CP=\"HONK\"");
-  res.setHeader("set-cookie", ["sid=\"\"; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/","JSESSIONID=C8CAB112A54DECAB36F64A605FA44B2A; Path=/","t=default; Path=/","DT=DI0jRgRLD_uQBqSzCUCxXy5OA; Expires=Mon, 05-Nov-2018 23:23:48 GMT; Path=/","sid=\"\"; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/","JSESSIONID=C8CAB112A54DECAB36F64A605FA44B2A; Path=/"]);
+  res.setHeader("set-cookie", ["sid=\"\"; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/","JSESSIONID=DE91D8A5B95F99B29CAF187E262F232E; Path=/","t=default; Path=/","DT=DI0AiqSdmTsRRWLJFiLSVLh9A; Expires=Sat, 15-Dec-2018 22:10:22 GMT; Path=/","sid=\"\"; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/","JSESSIONID=DE91D8A5B95F99B29CAF187E262F232E; Path=/"]);
   res.setHeader("x-okta-backend", "K1104");
   res.setHeader("cache-control", "no-cache, no-store");
   res.setHeader("pragma", "no-cache");
   res.setHeader("expires", "0");
-  res.setHeader("location", "http://rain.okta1.com:1802/oauth2/v1/authorize/redirect;jsessionid=C8CAB112A54DECAB36F64A605FA44B2A?okta_key=scsiaBORXe6htXjLWjQY5U6S7UPx2utd0eRCWp3seRo");
+  res.setHeader("location", "http://rain.okta1.com:1802/oauth2/v1/authorize/redirect;jsessionid=DE91D8A5B95F99B29CAF187E262F232E?okta_key=7seCwWUbJj3W-LpKJkF3o2bMNPrmxbMrUCnlhse_v-o");
   res.setHeader("content-language", "en");
   res.setHeader("content-length", "0");
-  res.setHeader("date", "Sat, 05 Nov 2016 23:23:48 GMT");
+  res.setHeader("date", "Thu, 15 Dec 2016 22:10:22 GMT");
 
   res.setHeader("x-yakbak-tape", path.basename(__filename, ".js"));
 

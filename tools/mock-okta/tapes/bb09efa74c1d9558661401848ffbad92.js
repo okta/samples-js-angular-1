@@ -11,7 +11,7 @@ var path = require("path");
  * content-type: application/json
  * accept-encoding: gzip
  * accept-language: en-US
- * cookie: DT=DI0szFpmcNvRFaypiGqtGoNmA; proximity_8f8ad6152faec0ef482c28a7e8352021="BHRiJkYDZvLDsA64Es6Cf+gQZiHO3zSInW7h2dJk1PiDIAl2gDG3PfOaHCN3vKuziinaM7THJjZDpaZGalhtno66/bndlOpil73QMOtJJ1ideLTMFlDFK2Xj622gYoMmyjAHtMe8SGbpez69MepNnvca/2UTT5h3LpQxCNnxsyCHAYRLda/QaoJpl9tSmy9P"; t=default; sid=102C26SfbUCSeGwm7GyQR_Iug; JSESSIONID=70AE96C8582376C33727D5332CA5E78A
+ * cookie: DT=DI0L5Xl5vMSSO-UbFrul__KIg; proximity_830330aec6d014b0519e86c291366f89="gql/bqRmKbsykoPNcivX/Pufo5bD3UzmVmzz5x6/8Ga0GTgprjoxwTvnnrtJYQRANwQdDAxdFn5txJNz4UOS7Rv1T0CNMpkTWspK7gzjEaryQUEjDGHsUZFqnLe0vN/1jJgSFrunXlDQZ36TdLpZPhEjSN30cFdv+WoJm5nC9iB39AM0bOErfXxQosPJwMvv"; t=default; sid=102DSZZxZx8TcW6iIMTwYPA9g; JSESSIONID=E6BC6FB23F18B2DE47F87D8CA1313E89
  * cache-control: no-cache, no-store
  * pragma: no-cache
  */
@@ -20,10 +20,10 @@ module.exports = function (req, res) {
   res.statusCode = 204;
 
   res.setHeader("server", "Apache-Coyote/1.1");
-  res.setHeader("x-okta-request-id", "req5msEVhJJTfOYIxxzzMhPnw");
+  res.setHeader("x-okta-request-id", "reqSnFNyetPT9mzA0Gwv7G5iA");
   res.setHeader("x-rate-limit-limit", "1200");
   res.setHeader("x-rate-limit-remaining", "1198");
-  res.setHeader("x-rate-limit-reset", "1478388289");
+  res.setHeader("x-rate-limit-reset", "1481839884");
   res.setHeader("p3p", "CP=\"HONK\"");
   res.setHeader("access-control-allow-origin", "http://localhost:3000");
   res.setHeader("access-control-allow-credentials", "true");
@@ -33,8 +33,8 @@ module.exports = function (req, res) {
   res.setHeader("expires", "0");
   res.setHeader("x-okta-backend", "K1104");
   res.setHeader("x-frame-options", "SAMEORIGIN");
-  res.setHeader("set-cookie", ["JSESSIONID=70AE96C8582376C33727D5332CA5E78A; Path=/"]);
-  res.setHeader("date", "Sat, 05 Nov 2016 23:23:51 GMT");
+  res.setHeader("set-cookie", ["JSESSIONID=E6BC6FB23F18B2DE47F87D8CA1313E89; Path=/"]);
+  res.setHeader("date", "Thu, 15 Dec 2016 22:10:25 GMT");
 
   res.setHeader("x-yakbak-tape", path.basename(__filename, ".js"));
 

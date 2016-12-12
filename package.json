@@ -12,7 +12,7 @@
   "license": "Apache-2.0",
   "homepage": "https://github.com/okta/samples-js-angular-1",
   "scripts": {
-    "test": "webdriver-manager update && protractor test/e2e/conf.js",
+    "test": "npm run test:e2e",
     "mock-okta": "node tools/mock-okta",
     "mock-okta:debug": "DEBUG=mock-okta npm run mock-okta",
     "lint:report": "eslint -f checkstyle -o build2/reports/lint/eslint-checkstyle-result.xml --ignore-path .gitignore .",
@@ -21,7 +21,8 @@
     "start": "node tools/dev-server",
     "ci-update-package": "ci-update-package",
     "ci-pkginfo:dataload": "ci-pkginfo -t dataload",
-    "wrap": "node tools/wrap-dependencies"
+    "wrap": "node tools/wrap-dependencies",
+    "test:e2e": "webdriver-manager update && protractor test/e2e/conf.js"
   },
   "files": [
     "dist"
@@ -32,7 +33,7 @@
   },
   "devDependencies": {
     "@okta/okta-auth-js": "1.6.0",
-    "@okta/okta-signin-widget": "1.8.0",
+    "@okta/okta-signin-widget": "1.9.0",
     "angular": "1.5.8",
     "angular-ui-router": "1.0.0-beta.3",
     "babel-core": "6.18.2",
@@ -56,8 +57,10 @@
     "express-session": "1.14.2",
     "handlebars-loader": "1.4.0",
     "jasmine-reporters": "2.2.0",
+    "jws": "3.1.4",
     "minimist": "1.2.0",
     "mustache": "2.2.1",
+    "pem-jwk": "1.5.1",
     "protractor": "4.0.4",
     "request": "2.73.0",
     "webpack": "1.13.3",
