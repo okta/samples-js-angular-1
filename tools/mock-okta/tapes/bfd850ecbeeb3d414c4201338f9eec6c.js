@@ -6,10 +6,10 @@ var path = require("path");
  * host: rain.okta1.com:1802
  * connection: keep-alive
  * user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:48.0) Gecko/20100101 Firefox/48.0
- * accept: image/webp,image/ *,* /*;q=0.8
+ * accept: * / *
  * accept-encoding: gzip
  * accept-language: en-US
- * cookie: JSESSIONID=70AE96C8582376C33727D5332CA5E78A; DT=DI0szFpmcNvRFaypiGqtGoNmA
+ * cookie: DT=DI0L5Xl5vMSSO-UbFrul__KIg; t=default; sid=102DSZZxZx8TcW6iIMTwYPA9g; proximity_830330aec6d014b0519e86c291366f89="gql/bqRmKbsykoPNcivX/Pufo5bD3UzmVmzz5x6/8Ga0GTgprjoxwTvnnrtJYQRANwQdDAxdFn5txJNz4UOS7Rv1T0CNMpkTWspK7gzjEaryQUEjDGHsUZFqnLe0vN/1jJgSFrunXlDQZ36TdLpZPhEjSN30cFdv+WoJm5nC9iB39AM0bOErfXxQosPJwMvv"; JSESSIONID=E6BC6FB23F18B2DE47F87D8CA1313E89
  * cache-control: no-cache, no-store
  * pragma: no-cache
  */
@@ -20,11 +20,11 @@ module.exports = function (req, res) {
   res.setHeader("server", "Apache-Coyote/1.1");
   res.setHeader("access-control-allow-origin", "*");
   res.setHeader("accept-ranges", "bytes");
-  res.setHeader("etag", "W/\"1097-1477768984000\"");
-  res.setHeader("last-modified", "Sat, 29 Oct 2016 19:23:04 GMT");
+  res.setHeader("etag", "W/\"1097-1481836685000\"");
+  res.setHeader("last-modified", "Thu, 15 Dec 2016 21:18:05 GMT");
   res.setHeader("content-type", "image/png");
   res.setHeader("content-length", "1097");
-  res.setHeader("date", "Sat, 05 Nov 2016 23:23:49 GMT");
+  res.setHeader("date", "Thu, 15 Dec 2016 22:10:24 GMT");
 
   res.setHeader("x-yakbak-tape", path.basename(__filename, ".js"));
 

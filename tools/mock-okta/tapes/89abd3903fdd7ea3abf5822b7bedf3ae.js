@@ -6,10 +6,10 @@ var path = require("path");
  * host: rain.okta1.com:1802
  * connection: keep-alive
  * user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:48.0) Gecko/20100101 Firefox/48.0
- * accept: image/webp,image/ *,* /*;q=0.8
+ * accept: * / *
  * accept-encoding: gzip
  * accept-language: en-US
- * cookie: DT=DI0jRgRLD_uQBqSzCUCxXy5OA; t=default; JSESSIONID=C8CAB112A54DECAB36F64A605FA44B2A
+ * cookie: DT=DI0AiqSdmTsRRWLJFiLSVLh9A; t=default; JSESSIONID=DE91D8A5B95F99B29CAF187E262F232E
  * cache-control: no-cache, no-store
  * pragma: no-cache
  */
@@ -20,11 +20,11 @@ module.exports = function (req, res) {
   res.setHeader("server", "Apache-Coyote/1.1");
   res.setHeader("access-control-allow-origin", "*");
   res.setHeader("accept-ranges", "bytes");
-  res.setHeader("etag", "W/\"2207-1446738142000\"");
-  res.setHeader("last-modified", "Thu, 05 Nov 2015 15:42:22 GMT");
+  res.setHeader("etag", "W/\"2207-1481748418000\"");
+  res.setHeader("last-modified", "Wed, 14 Dec 2016 20:46:58 GMT");
   res.setHeader("content-type", "image/png");
   res.setHeader("content-length", "2207");
-  res.setHeader("date", "Sat, 05 Nov 2016 23:23:49 GMT");
+  res.setHeader("date", "Thu, 15 Dec 2016 22:10:24 GMT");
 
   res.setHeader("x-yakbak-tape", path.basename(__filename, ".js"));
 

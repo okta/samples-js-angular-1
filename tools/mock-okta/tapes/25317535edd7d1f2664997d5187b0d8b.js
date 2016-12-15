@@ -1,7 +1,7 @@
 var path = require("path");
 
 /**
- * GET /oauth2/v1/authorize/redirect;jsessionid=C8CAB112A54DECAB36F64A605FA44B2A?okta_key=scsiaBORXe6htXjLWjQY5U6S7UPx2utd0eRCWp3seRo
+ * GET /oauth2/v1/authorize/redirect;jsessionid=DE91D8A5B95F99B29CAF187E262F232E?okta_key=7seCwWUbJj3W-LpKJkF3o2bMNPrmxbMrUCnlhse_v-o
  *
  * host: rain.okta1.com:1802
  * connection: keep-alive
@@ -9,7 +9,7 @@ var path = require("path");
  * accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,* / *;q=0.8
  * accept-encoding: gzip
  * accept-language: en-US
- * cookie: DT=DI0szFpmcNvRFaypiGqtGoNmA; t=default; sid=102C26SfbUCSeGwm7GyQR_Iug; proximity_8f8ad6152faec0ef482c28a7e8352021="BHRiJkYDZvLDsA64Es6Cf+gQZiHO3zSInW7h2dJk1PiDIAl2gDG3PfOaHCN3vKuziinaM7THJjZDpaZGalhtno66/bndlOpil73QMOtJJ1ideLTMFlDFK2Xj622gYoMmyjAHtMe8SGbpez69MepNnvca/2UTT5h3LpQxCNnxsyCHAYRLda/QaoJpl9tSmy9P"; JSESSIONID=70AE96C8582376C33727D5332CA5E78A
+ * cookie: DT=DI0L5Xl5vMSSO-UbFrul__KIg; t=default; sid=102DSZZxZx8TcW6iIMTwYPA9g; proximity_830330aec6d014b0519e86c291366f89="gql/bqRmKbsykoPNcivX/Pufo5bD3UzmVmzz5x6/8Ga0GTgprjoxwTvnnrtJYQRANwQdDAxdFn5txJNz4UOS7Rv1T0CNMpkTWspK7gzjEaryQUEjDGHsUZFqnLe0vN/1jJgSFrunXlDQZ36TdLpZPhEjSN30cFdv+WoJm5nC9iB39AM0bOErfXxQosPJwMvv"; JSESSIONID=E6BC6FB23F18B2DE47F87D8CA1313E89
  * cache-control: no-cache, no-store
  * pragma: no-cache
  */
@@ -18,20 +18,20 @@ module.exports = function (req, res) {
   res.statusCode = 302;
 
   res.setHeader("server", "Apache-Coyote/1.1");
-  res.setHeader("x-okta-request-id", "reqVnxE476dRbe9z-g5Na-k9Q");
+  res.setHeader("x-okta-request-id", "reqL8byCfECSwWKcAUCpcHL2A");
   res.setHeader("x-rate-limit-limit", "10000");
   res.setHeader("x-rate-limit-remaining", "9995");
-  res.setHeader("x-rate-limit-reset", "1478388288");
+  res.setHeader("x-rate-limit-reset", "1481839882");
   res.setHeader("p3p", "CP=\"HONK\"");
   res.setHeader("x-okta-backend", "K1104");
   res.setHeader("cache-control", "no-cache, no-store");
   res.setHeader("pragma", "no-cache");
   res.setHeader("expires", "0");
-  res.setHeader("set-cookie", ["t=default; Path=/","sid=102C26SfbUCSeGwm7GyQR_Iug; Path=/","JSESSIONID=70AE96C8582376C33727D5332CA5E78A; Path=/"]);
-  res.setHeader("location", "http://localhost:3000/authorization-code/callback?code=ZyZnIfmPNIKxWAux1jsy&state=STATE");
+  res.setHeader("set-cookie", ["t=default; Path=/","sid=102DSZZxZx8TcW6iIMTwYPA9g; Path=/","JSESSIONID=E6BC6FB23F18B2DE47F87D8CA1313E89; Path=/"]);
+  res.setHeader("location", "http://localhost:3000/authorization-code/callback?code=oM3wnJTZuTq2Kt2UEb_P&state=STATE");
   res.setHeader("content-language", "en");
   res.setHeader("content-length", "0");
-  res.setHeader("date", "Sat, 05 Nov 2016 23:23:49 GMT");
+  res.setHeader("date", "Thu, 15 Dec 2016 22:10:24 GMT");
 
   res.setHeader("x-yakbak-tape", path.basename(__filename, ".js"));
 

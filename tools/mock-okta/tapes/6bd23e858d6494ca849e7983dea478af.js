@@ -11,7 +11,7 @@ var path = require("path");
  * x-okta-xsrftoken: 
  * accept-encoding: gzip
  * accept-language: en-US
- * cookie: DT=DI0jRgRLD_uQBqSzCUCxXy5OA; t=default; JSESSIONID=C8CAB112A54DECAB36F64A605FA44B2A
+ * cookie: DT=DI0AiqSdmTsRRWLJFiLSVLh9A; t=default; JSESSIONID=DE91D8A5B95F99B29CAF187E262F232E
  * cache-control: no-cache, no-store
  * pragma: no-cache
  */
@@ -20,12 +20,12 @@ module.exports = function (req, res) {
   res.statusCode = 200;
 
   res.setHeader("server", "Apache-Coyote/1.1");
-  res.setHeader("x-okta-request-id", "reqon40OursSlO7PbJfRtTr8A");
+  res.setHeader("x-okta-request-id", "reqNFgoVJCtSSuUpDw42uiLrg");
   res.setHeader("x-rate-limit-limit", "10000");
   res.setHeader("x-rate-limit-remaining", "9997");
-  res.setHeader("x-rate-limit-reset", "1478388288");
+  res.setHeader("x-rate-limit-reset", "1481839882");
   res.setHeader("p3p", "CP=\"HONK\"");
-  res.setHeader("set-cookie", ["sid=\"\"; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/","t=default; Path=/","sid=\"\"; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/","JSESSIONID=C8CAB112A54DECAB36F64A605FA44B2A; Path=/"]);
+  res.setHeader("set-cookie", ["sid=\"\"; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/","t=default; Path=/","sid=\"\"; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/","JSESSIONID=DE91D8A5B95F99B29CAF187E262F232E; Path=/"]);
   res.setHeader("cache-control", "no-cache, no-store");
   res.setHeader("pragma", "no-cache");
   res.setHeader("expires", "0");
@@ -34,7 +34,7 @@ module.exports = function (req, res) {
   res.setHeader("content-type", "application/json;charset=utf-8");
   res.setHeader("content-language", "en");
   res.setHeader("content-length", "57");
-  res.setHeader("date", "Sat, 05 Nov 2016 23:23:49 GMT");
+  res.setHeader("date", "Thu, 15 Dec 2016 22:10:24 GMT");
 
   res.setHeader("x-yakbak-tape", path.basename(__filename, ".js"));
 
