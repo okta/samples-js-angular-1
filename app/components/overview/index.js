@@ -12,19 +12,19 @@
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import ScenariosComponent from './scenarios.component';
+import OverviewComponent from './overview.component';
 
-const scenarios = angular
-  .module('scenarios', [uiRouter])
-  .component('scenarios', ScenariosComponent)
+const overview = angular
+  .module('overview', [uiRouter])
+  .component('overview', OverviewComponent)
   .config(($stateProvider, $urlRouterProvider) => {
     $stateProvider
-      .state('scenarios', {
+      .state('overview', {
         url: '/',
-        component: 'scenarios',
+        component: 'overview',
       });
     $urlRouterProvider.otherwise('/');
   })
   .name;
 
-export default scenarios;
+export default overview;

@@ -10,19 +10,10 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
-const ScenariosComponent = {
+const OverviewComponent = {
   template: `
-    <ul data-se="scenarios">
-      <li>
-        <a ui-sref="authorization-code/login-redirect" data-se="auth-code-login-redirect">Authorization Code: Login with Okta</a>
-      </li>
-      <li>
-        <a ui-sref="authorization-code/login-custom" data-se="auth-code-login-custom">
-          Authorization Code: Login using a custom login form
-        </a>
-      </li>
-    </ul>
+    <div id="default-app-text" ng-non-bindable>{{ Samples render here }}</div>
   `,
 };
 
-export default ScenariosComponent;
+export default OverviewComponent;

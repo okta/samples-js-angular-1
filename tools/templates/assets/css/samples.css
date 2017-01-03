@@ -126,6 +126,10 @@ ol.ui.list li {
   margin: 30px auto;
 }
 
+.profile .ui.table th {
+  text-align: center;
+}
+
 /* Sample App *****************************************************************/
 
 #okta-sign-in.main-container {
