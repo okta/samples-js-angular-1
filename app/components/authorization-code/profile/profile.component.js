@@ -15,14 +15,35 @@ import Controller from './profile.controller';
 const ProfileComponent = {
   controller: Controller,
   template: `
-    <p>
-      <strong data-se="email">{{$ctrl.email}}</strong> is logged in!<br />
-      {{$ctrl.iat}} - {{$ctrl.iatFormatted}}<br />
-      {{$ctrl.exp}} - {{$ctrl.expFormatted}}<br />
-    </p>
-    <p>
-      <a ng-click="$ctrl.logout()" data-se="logout-link" href="">Logout</a>
-    </p>
+    <div class="profile">
+      <h2 class="ui icon header">
+        <i class="hand peace icon"></i>
+        <div class="content">
+          Signed In
+        </div>
+      </h2>
+      <table class="ui collapsing celled table inverted black">
+        <thead>
+          <tr>
+            <th colspan="2">Some claims from the id_token</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>email</td><td data-se="email">{{$ctrl.email}}</td></tr>
+          <tr><td>exp</td><td>{{$ctrl.expFormatted}}</td></tr>
+        </tbody>
+      </table>
+      <p>
+        <button
+          id="logout"
+          data-se="logout-link"
+          ng-click="$ctrl.logout()"
+          class="ui grey icon button">
+          <i class="sign out icon"></i>
+          Sign out
+        </button>
+      </p>
+    </div>
   `,
 };
 

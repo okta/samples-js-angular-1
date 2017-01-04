@@ -27,6 +27,11 @@ class LoginCustomController {
         responseType: 'code',
         scopes: ['openid', 'email', 'profile'],
       },
+      i18n: {
+        en: {
+          'primaryauth.title': 'Use john/Asdf1234 for the mock Okta server',
+        },
+      },
     });
     signIn.renderEl({ el: '#sign-in-container' }, () => {});
   }

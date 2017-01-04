@@ -11,11 +11,11 @@
  */
 
 import angular from 'angular';
-import Scenarios from './scenarios';
+import Overview from './overview';
 import AuthorizationCode from './authorization-code';
 
 const components = angular
-  .module('components', [Scenarios, AuthorizationCode])
+  .module('components', [Overview, AuthorizationCode])
   .name;
 
 export default components;
