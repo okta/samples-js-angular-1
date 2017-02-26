@@ -23,7 +23,7 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const webpackConfig = require('../../webpack.config');
 const handlers = require('./route-handlers');
-const config = require('../../.samples.config.json');
+const config = require('../../.samples.config.json').oktaSample;
 
 const templateDir = path.resolve(__dirname, '../templates');
 

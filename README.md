@@ -12,6 +12,12 @@ Sample: JS + Angular 1
 
 - [Haskell + Scotty](https://github.com/okta/samples-haskell-scotty)
 
+- [Java + Spring MVC](https://github.com/okta/samples-java-spring-mvc)
+
+- [Java + Dropwizard](https://github.com/okta/samples-java-dropwizard)
+
+- [.NET Core + ASP.NET MVC](https://github.com/okta/samples-dotnetcore-aspnetmvc)
+
 
 ## Commands
 
