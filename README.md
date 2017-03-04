@@ -5,7 +5,7 @@ Angular 1 Samples
 
   - [Introduction](#introduction)
   - [Using the built-in Express server](#using-the-built-in-express-server)
-  - [Using a different back-end](#using-a-different-back-end)
+  - [Using a different back end](#using-a-different-back-end)
   - [Support](#support)
   - [License](#license)
  
@@ -13,7 +13,7 @@ Angular 1 Samples
 
 This repository contains the Angular 1 front-end code that can be used by our full end-to-end samples.
 
-If you're only interested in the front-end code, you can run this as a standalone demo by using the built-in Express backend. To see the full end-to-end scenarios with a different back-end and for more documentation around the scenarios, you should pair this front-end with our full end-to-end samples.
+If you're only interested in the front-end code, you can run this as a standalone demo by using the built-in Express backend. To see the full end-to-end scenarios with a different back end, pair this front end with our full end-to-end samples. These samples also provide more documentation around the scenarios.
 
 ## Using the built-in Express server
 
@@ -21,13 +21,13 @@ For more information about the scenarios implemented in this sample, check out t
 
 To run this sample:
 
-1. Clone this repository and navigate to the new directory
+1. Clone this repository and navigate to the new directory.
 
     ```bash
     $ git clone git@github.com:okta/samples-js-angular-1.git && cd samples-js-angular-1
     ```
 
-2. Install the required dependencies
+2. Install the required dependencies.
 
     ```bash
     [samples-js-angular-1]$ npm install
@@ -43,13 +43,13 @@ To run this sample:
 4. In a different terminal window, run the Express server.
 
     ```bash
-    # Starts the sample back-end on http://localhost:3000
+    # Starts the sample back end on http://localhost:3000
     [samples-js-angular-1]$ npm start
     ```
 
 5. You're all set! Open a browser window to [http://localhost:3000](http://localhost:3000).
 
-## Using a different back-end
+## Using a different back end
 
 To run the full sample integrated with a different back-end web framework or language:
 
@@ -66,10 +66,10 @@ To run the full sample integrated with a different back-end web framework or lan
 
 2. Follow the end-to-end sample setup instructions
 
-3. Install this front-end in the cloned directory
+3. Install this front end in the cloned directory
 
     ```bash
-    # Install the front-end. For example, if using Django:
+    # Install the front end. For example, if using Django:
     [samples-python-django]$ npm install @okta/samples-js-angular-1 --save
     ```
 
