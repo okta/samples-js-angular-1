@@ -1,4 +1,4 @@
-Angular 1 Samples
+ular 1 Samples
 ======
 
 ## Table of Contents
