@@ -23,14 +23,17 @@ const outPath = process.env.DIST_OUT || path.resolve(__dirname, 'dist');
 console.log(`Building frontend assets into ${outPath}`);
 
 module.exports = {
-  entry: [
-    'babel-polyfill',
-    './app/app.js',
-  ],
+  entry: {
+    bundle: [
+      'babel-polyfill',
+      './app/app.js',
+    ],
+    doc: './app/util/doc.js',
+  },
   output: {
     path: outPath,
-    filename: 'bundle.js',
-    library: 'bundle',
+    filename: '[name].js',
+    library: '[name]',
   },
   devtool: 'source-map',
   plugins: [
