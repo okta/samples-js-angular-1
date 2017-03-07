@@ -14,11 +14,8 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import AppComponent from './app.component';
 import Components from './components';
-import initDoc from './util/doc';
 
 export function bootstrap(config) {
-  initDoc();
-
   const containerEl = document.querySelector(config.container);
   angular.element(containerEl).html('<app></app>');
 
