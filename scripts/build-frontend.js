@@ -21,4 +21,4 @@ const config = require(path.resolve(cwd, '.samples.config.json'));
 const out = path.resolve(cwd, config.oktaSample.server.staticDir);
 
 process.env.DIST_OUT = out;
-exec(`npm run build`, { cwd: __dirname, stdio: 'inherit' });
+exec('npm run build', { cwd: __dirname, stdio: 'inherit' });
