@@ -21,6 +21,7 @@ class LoginRedirectController {
   $onInit() {
     this.authClient = new OktaAuth({
       url: this.config.oktaUrl,
+      issuer: this.config.issuer,
       clientId: this.config.clientId,
       redirectUri: this.config.redirectUri,
       scopes: ['openid', 'email', 'profile'],
