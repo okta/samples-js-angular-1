@@ -24,6 +24,7 @@ class LoginCustomController {
       clientId: this.config.clientId,
       redirectUri: this.config.redirectUri,
       authParams: {
+        issuer: this.config.issuer,
         responseType: 'code',
         scopes: ['openid', 'email', 'profile'],
       },
