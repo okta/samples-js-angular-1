@@ -4,7 +4,7 @@
     "environment": "JS",
     "framework": "Angular 1",
     "name": "samples-js-angular-1",
-    "version": "1.9.0",
+    "version": "1.16.0",
     "parentType": "sample"
   }
 }

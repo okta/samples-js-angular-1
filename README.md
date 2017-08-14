@@ -13,7 +13,7 @@ Angular 1 Samples
 
 This repository contains the Angular 1 front-end code that can be used by our full end-to-end samples.
 
-If you're only interested in the front-end code, you can run this as a standalone demo by using the built-in Express backend. To see the full end-to-end scenarios with a different back end, pair this front end with our full end-to-end samples. These samples also provide more documentation around the scenarios.
+If you're only interested in the front-end code, you can run this as a standalone demo by using the built-in Express back end. To see the full end-to-end scenarios with a different back end and for more documentation around the scenarios, you should pair this front end with our full end-to-end samples. These samples also provide more documentation around the scenarios.
 
 ## Using the built-in Express server
 
@@ -62,14 +62,16 @@ To run the full sample integrated with a different back-end web framework or lan
     - [Dropwizard (Java)](https://github.com/okta/samples-java-dropwizard)
     - [ASP.NET MVC (.NET Core)](https://github.com/okta/samples-dotnetcore-aspnetmvc)
     - [Scotty (Haskell)](https://github.com/okta/samples-haskell-scotty)
+    - [Slim 3 (PHP)](https://github.com/okta/samples-php-slim-3)
+    - [Symfony (PHP)](https://github.com/okta/samples-php-symfony)
 
 
-2. Follow the end-to-end sample setup instructions
+2. Follow the end-to-end sample setup instructions.
 
-3. Install this front end in the cloned directory
+3. Install this front end in the cloned directory.
 
     ```bash
-    # Install the front end. For example, if using Django:
+    # Install the front-end. For example, if using Django:
     [samples-python-django]$ npm install @okta/samples-js-angular-1 --save
     ```
 
