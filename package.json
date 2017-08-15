@@ -11,7 +11,7 @@
   "scripts": {
     "test": "npm run test:e2e",
     "mock-okta": "node tools/mock-okta",
-    "mock-okta:debug": "DEBUG=mock-okta npm run mock-okta",
+    "mock-okta:debug": "cross-env DEBUG=mock-okta npm run mock-okta",
     "lint:report": "eslint -f checkstyle -o build2/reports/lint/eslint-checkstyle-result.xml --ignore-path .gitignore .",
     "lint": "eslint --ignore-path .gitignore .",
     "build": "webpack --config webpack.config.js",
@@ -45,6 +45,7 @@
     "connect": "3.5.0",
     "consolidate": "0.14.1",
     "cookie-parser": "1.4.3",
+    "cross-env": "^5.0.5",
     "debug": "2.1.3",
     "diff": "3.0.1",
     "eslint": "3.9.1",
