@@ -9,10 +9,7 @@
  *
  * See the License for the specific language governing permissions and limitations under the License.
  */
-
-import OktaAuth from '@okta/okta-auth-js/jquery';
-
-class ProfileController {
+ class ProfileController {
 
   constructor(config) {
     this.user = config.user;
@@ -21,17 +18,15 @@ class ProfileController {
 
   $onInit() {
     this.email = this.user.email;
-    this.iat = this.user.iat;
-    this.iatFormatted = new Date(this.user.iat * 1000);
-    this.exp = this.user.exp;
-    this.expFormatted = new Date(this.user.exp * 1000);
-    this.authClient = new OktaAuth({ url: this.oktaUrl });
+    this.givenName = this.user.givenName;
+    this.familyName = this.user.familyName;
+    this.subject = this.user.subject;
+    this.zoneInfo = this.user.zoneInfo;
+    this.locale = this.user.locale;
   }
 
   logout() {
-    this.authClient.session.close().then(() => {
-      window.location = '/authorization-code/logout';
-    });
+    window.location = '/authorization-code/logout'; 
   }
 
 }
