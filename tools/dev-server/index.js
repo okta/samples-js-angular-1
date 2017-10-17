@@ -10,12 +10,11 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
-/* eslint import/no-extraneous-dependencies:0, no-console:0, no-param-reassign:0 */
-
 'use strict';
 
 const path = require('path');
 const chalk = require('chalk');
+const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const cons = require('consolidate');
@@ -24,6 +23,7 @@ const WebpackDevServer = require('webpack-dev-server');
 const webpackConfig = require('../../webpack.config');
 const handlers = require('./route-handlers');
 const config = require('../../.samples.config.json').oktaSample;
+const { ExpressOIDC } = require('@okta/oidc-middleware');
 
 const templateDir = path.resolve(__dirname, '../templates');
 
@@ -44,14 +44,34 @@ const server = new WebpackDevServer(webpack(webpackConfig), {
       saveUninitialized: false,
     }));
 
+
+    const oidc = new ExpressOIDC({
+      issuer: config.oidc.issuer,
+      client_id: config.oidc.clientId,
+      client_secret: config.oidc.clientSecret,
+      redirect_uri: config.oidc.redirectUri,
+      scope: 'openid profile email'
+    });
+
+    // Let ExpressOIDC add the /login and /authorization-code/callback routes
+    app.use(oidc.router);
+
     // These are the routes that need to be implemented to handle the
     // authorization code scenarios
     app.get('/', handlers.scenarios);
     app.get('/authorization-code/login-redirect', handlers.loginRedirect);
-    app.get('/authorization-code/login-custom', handlers.loginCustom);
     app.get('/authorization-code/profile', handlers.profile);
     app.get('/authorization-code/logout', handlers.logout);
-    app.get('/authorization-code/callback', handlers.callback);
+
+    //Wait to start listening until ExpressOIDC is ready.
+    oidc.on('ready', () => {
+      app.listen(3000, () => console.log(`Express server started on http://localhost:${config.server.port}`));
+    });
+
+    oidc.on('error', err => {
+      console.log('Unable to configure ExpressOIDC', err);
+    });
+
   },
 
   // Webpack Options
@@ -62,11 +82,4 @@ const server = new WebpackDevServer(webpack(webpackConfig), {
   lazy: false,
   stats: { colors: true },
   publicPath: '/assets/',
-});
-
-server.listen(config.server.port, () => {
-  console.log('==============================================================');
-  console.log(chalk.bold('= DEV SERVER STARTED '));
-  console.log(chalk.bold(`= Access it at: http://localhost:${config.server.port} `));
-  console.log('==============================================================');
 });

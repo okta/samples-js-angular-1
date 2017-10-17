@@ -28,6 +28,7 @@
     "build-frontend": "./scripts/build-frontend.js"
   },
   "dependencies": {
+    "@okta/oidc-middleware": "0.0.2",
     "@okta/okta-signin-widget": "1.9.0",
     "angular": "1.5.8",
     "angular-ui-router": "1.0.0-beta.3",
@@ -36,6 +37,8 @@
     "babel-polyfill": "6.16.0",
     "babel-preset-es2015": "6.18.0",
     "copy-webpack-plugin": "4.0.0",
+    "express": "4.14.0",
+    "express-session": "^1.15.5",
     "handlebars-loader": "1.4.0",
     "highlight.js": "9.9.0",
     "semantic-ui-css": "2.2.4",

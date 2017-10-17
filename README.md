@@ -1,6 +1,17 @@
 Angular 1 Samples
 ======
 
+## Note
+This branch of Angular sample is not compatible with our back end samples listed in [Using a different back end](#using-a-different-back-end)
+To use Angular sample with these back end samples, please checkout [Version 1.10](#https://github.com/okta/samples-js-angular-1/tree/1.10)
+We will incrementally update our back end samples to be compatible with this version of Angular sample.
+
+However, the built-in Express back end in this repo is compatible with the current version.
+To use it, follow the steps in the section [Using the built-in Express server](#using-the-built-in-express-server) 
+And if you are using the mock-okta server, please use chrome browser for testing.
+
+Please email developers@okta.com if you want to use this version in a new sample project.
+
 ## Table of Contents
 
   - [Introduction](#introduction)
