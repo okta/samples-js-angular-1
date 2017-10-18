@@ -13,8 +13,6 @@
 'use strict';
 
 const path = require('path');
-const chalk = require('chalk');
-const express = require('express');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const cons = require('consolidate');
@@ -27,7 +25,8 @@ const { ExpressOIDC } = require('@okta/oidc-middleware');
 
 const templateDir = path.resolve(__dirname, '../templates');
 
-const server = new WebpackDevServer(webpack(webpackConfig), {
+// eslint-disable-next-line no-new
+new WebpackDevServer(webpack(webpackConfig), {
   setup: (app) => {
     // Use mustache to serve up the server side templates
     app.engine('mustache', cons.mustache);
@@ -50,7 +49,7 @@ const server = new WebpackDevServer(webpack(webpackConfig), {
       client_id: config.oidc.clientId,
       client_secret: config.oidc.clientSecret,
       redirect_uri: config.oidc.redirectUri,
-      scope: 'openid profile email'
+      scope: 'openid profile email',
     });
 
     // Let ExpressOIDC add the /login and /authorization-code/callback routes
@@ -63,15 +62,16 @@ const server = new WebpackDevServer(webpack(webpackConfig), {
     app.get('/authorization-code/profile', handlers.profile);
     app.get('/authorization-code/logout', handlers.logout);
 
-    //Wait to start listening until ExpressOIDC is ready.
+    // Wait to start listening until ExpressOIDC is ready.
     oidc.on('ready', () => {
-      app.listen(3000, () => console.log(`Express server started on http://localhost:${config.server.port}`));
+      app.listen(3000, () => {
+        console.log(`Express server started on http://localhost:${config.server.port}`);
+      });
     });
 
-    oidc.on('error', err => {
+    oidc.on('error', (err) => {
       console.log('Unable to configure ExpressOIDC', err);
     });
-
   },
 
   // Webpack Options

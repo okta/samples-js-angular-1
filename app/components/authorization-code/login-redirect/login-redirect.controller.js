@@ -10,8 +10,6 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
-import OktaAuth from '@okta/okta-auth-js/jquery';
-
 class LoginRedirectController {
 
   constructor(config) {
@@ -19,7 +17,7 @@ class LoginRedirectController {
   }
 
   login() {
-    window.location = '/login'; 
+    window.location = '/login';
   }
 
 }

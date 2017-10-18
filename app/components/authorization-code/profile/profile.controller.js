@@ -9,7 +9,7 @@
  *
  * See the License for the specific language governing permissions and limitations under the License.
  */
- class ProfileController {
+class ProfileController {
 
   constructor(config) {
     this.user = config.user;
@@ -26,7 +26,7 @@
   }
 
   logout() {
-    window.location = '/authorization-code/logout'; 
+    window.location = '/authorization-code/logout';
   }
 
 }

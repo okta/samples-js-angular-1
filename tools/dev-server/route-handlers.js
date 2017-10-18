@@ -14,12 +14,9 @@
 
 'use strict';
 
-const request = require('request');
-const querystring = require('querystring');
 const config = require('../../.samples.config.json').oktaSample;
 
 const handlers = module.exports = {};
-const cachedJwks = {};
 
 /**
  * Index page - lists the scenarios that the developer can choose from
@@ -30,7 +27,7 @@ const cachedJwks = {};
 handlers.scenarios = (req, res) => {
   if (req.isAuthenticated()) {
     res.redirect(302, '/authorization-code/profile');
-    return;   
+    return;
   }
   res.render('overview', { config });
 };
