@@ -10,26 +10,14 @@
  * See the License for the specific language governing permissions and limitations under the License.
  */
 
-import OktaAuth from '@okta/okta-auth-js/jquery';
-
 class LoginRedirectController {
 
   constructor(config) {
     this.config = config;
   }
 
-  $onInit() {
-    this.authClient = new OktaAuth({
-      url: this.config.oktaUrl,
-      issuer: this.config.issuer,
-      clientId: this.config.clientId,
-      redirectUri: this.config.redirectUri,
-      scopes: ['openid', 'email', 'profile'],
-    });
-  }
-
   login() {
-    this.authClient.token.getWithRedirect({ responseType: 'code' });
+    window.location = '/login';
   }
 
 }

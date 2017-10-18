@@ -29,8 +29,11 @@ const ProfileComponent = {
           </tr>
         </thead>
         <tbody>
-          <tr><td>email</td><td data-se="email">{{$ctrl.email}}</td></tr>
-          <tr><td>exp</td><td>{{$ctrl.expFormatted}}</td></tr>
+          <tr><td>Email</td><td data-se="email">{{$ctrl.email}}</td></tr>
+          <tr><td>Given name</td><td>{{$ctrl.givenName}}</td></tr>
+          <tr><td>Family name</td><td>{{$ctrl.familyName}}</td></tr>
+          <tr><td>Subject</td><td>{{$ctrl.subject}}</td></tr>
+          <tr><td>Locale</td><td>{{$ctrl.locale}}</td></tr>
         </tbody>
       </table>
       <p>

@@ -5,19 +5,30 @@ Angular 1 Samples
 
   - [Introduction](#introduction)
   - [Using the built-in Express server](#using-the-built-in-express-server)
-  - [Using a different back end](#using-a-different-back-end)
+  - [Using your own Okta org](#using-your-own-okta-org)
   - [Support](#support)
   - [License](#license)
  
 ## Introduction
 
-This repository contains the Angular 1 front-end code that can be used by our full end-to-end samples.
+This repository contains the Angular 1 front-end code that can be used along with back-end server samples.
 
-If you're only interested in the front-end code, you can run this as a standalone demo by using the built-in Express back end. To see the full end-to-end scenarios with a different back end and for more documentation around the scenarios, you should pair this front end with our full end-to-end samples. These samples also provide more documentation around the scenarios.
+> Note:
+This version of Angular sample is not compatible with our back-end samples listed in ['Using a different back-end'](#https://github.com/okta/samples-js-angular-1/tree/1.10#using-a-different-back-end).
+To use this Angular sample with these back-end samples, please use [Version 1.10](#https://github.com/okta/samples-js-angular-1/tree/1.10)
+
+```bash
+$ npm install @okta/samples-js-angular-1@1.10.0
+```
+
+Use the following [README](#https://github.com/okta/samples-js-angular-1/blob/1.10/README.md) if you're interested in running the previous version of this Angular sample.
+
+We will incrementally update our back-end samples to be compatible with this version of Angular sample.
+However, the built-in Express back-end in this repo is compatible with the current version of Angular front-end.
+
+Please email developers@okta.com if you want to use this version in a new sample project.
 
 ## Using the built-in Express server
-
-For more information about the scenarios implemented in this sample, check out the [Express sample documentation](https://github.com/okta/samples-nodejs-express-4#express-and-angular-1-sample).
 
 To run this sample:
 
@@ -43,39 +54,48 @@ To run this sample:
 4. In a different terminal window, run the Express server.
 
     ```bash
-    # Starts the sample back end on http://localhost:3000
+    # Starts the sample back-end on http://localhost:3000
     [samples-js-angular-1]$ npm start
     ```
 
 5. You're all set! Open a browser window to [http://localhost:3000](http://localhost:3000).
+> Note:
+Use chrome browser if you're running the mock-okta server, to test the sample.
 
-## Using a different back end
+## Using your own Okta org
+You can create your own Okta org by signing up for a [free Developer Account](https://developer.okta.com/signup/)
 
-To run the full sample integrated with a different back-end web framework or language:
+If you'd like to test this sample against your own Okta org, navigate to the Okta Developer Dashboard and follow these steps:
 
-1. Clone one of our end-to-end samples:
+1. Create a new **Web** application by clicking **Add Application** and selecting **Web** from the *Applications* page.		
+2. After accepting the default configuration, click **Done** to redirect back to the *General Settings* of your application.		
+3. Copy the **Client ID** and **Client Secret**, as it will be needed for the client configuration.
+4. Finally, navigate to `https://{yourOktaDomain}.com/api/v1/authorizationServers/default` to see if the [Default Authorization Server](https://developer.okta.com/docs/api/resources/oauth2.html#using-the-default-authorization-server) is setup. If not, [let us know](mailto:developers@okta.com).
+Then, replace the *oidc* settings in `.samples.config.json` to point to your new app:
+```javascript
+// .samples.config.json
+{
+  "oidc": {
+    "oktaUrl": "https://{{yourOktaDomain}}.com",
+    "issuer": "https://{{yourOktaDomain}}.com/oauth2/default",
+    "clientId": "{{yourClientId}}",
+    "clientSecret": "{{yourClientSecret}}",
+    "redirectUri": "http://localhost:3000/authorization-code/callback"
+  }
+}
+```
 
-    - [Express 4 (NodeJs)](https://github.com/okta/samples-nodejs-express-4)
-    - [Django (Python)](https://github.com/okta/samples-python-django)
-    - [Flask (Python)](https://github.com/okta/samples-python-flask)
-    - [Spring MVC (Java)](https://github.com/okta/samples-java-spring-mvc)
-    - [Dropwizard (Java)](https://github.com/okta/samples-java-dropwizard)
-    - [ASP.NET MVC (.NET Core)](https://github.com/okta/samples-dotnetcore-aspnetmvc)
-    - [Scotty (Haskell)](https://github.com/okta/samples-haskell-scotty)
-    - [Slim 3 (PHP)](https://github.com/okta/samples-php-slim-3)
-    - [Symfony (PHP)](https://github.com/okta/samples-php-symfony)
+Stop the mock-okta server and Express server if you're running it.
+ 
+Open a new terminal window, and run the Express server.
+   
+   ```bash
+   # Starts the sample back-end on http://localhost:3000
+   [samples-js-angular-1]$ npm start
+   ```
+   
+You're all set! Open a browser window to [http://localhost:3000](http://localhost:3000).
 
-
-2. Follow the end-to-end sample setup instructions.
-
-3. Install this front end in the cloned directory.
-
-    ```bash
-    # Install the front-end. For example, if using Django:
-    [samples-python-django]$ npm install @okta/samples-js-angular-1 --save
-    ```
-
-4. Follow the end-to-end instructions to run the web server. You should be up and running with Angular 1!
 
 ## Support 
 
