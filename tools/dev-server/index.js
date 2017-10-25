@@ -64,7 +64,7 @@ new WebpackDevServer(webpack(webpackConfig), {
 
     // Wait to start listening until ExpressOIDC is ready.
     oidc.on('ready', () => {
-      app.listen(3000, () => {
+      app.listen(config.server.port, () => {
         console.log(`Express server started on http://localhost:${config.server.port}`);
       });
     });

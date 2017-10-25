@@ -8,25 +8,14 @@ Angular 1 Samples
   - [Using your own Okta org](#using-your-own-okta-org)
   - [Support](#support)
   - [License](#license)
- 
+
 ## Introduction
 
 This repository contains the Angular 1 front-end code that can be used along with back-end server samples.
 
-> Note:
-This version of Angular sample is not compatible with our back-end samples listed in ['Using a different back-end'](#https://github.com/okta/samples-js-angular-1/tree/1.10#using-a-different-back-end).
-To use this Angular sample with these back-end samples, please use [Version 1.10](#https://github.com/okta/samples-js-angular-1/tree/1.10)
-
-```bash
-$ npm install @okta/samples-js-angular-1@1.10.0
-```
-
-Use the following [README](#https://github.com/okta/samples-js-angular-1/blob/1.10/README.md) if you're interested in running the previous version of this Angular sample.
-
-We will incrementally update our back-end samples to be compatible with this version of Angular sample.
-However, the built-in Express back-end in this repo is compatible with the current version of Angular front-end.
-
-Please email developers@okta.com if you want to use this version in a new sample project.
+> Note: This Angular sample application is currently only compatible with our [Express Sample Application](https://github.com/okta/samples-nodejs-express-4).  If you are using a different sample for the back-end or resource server, please check out the [1.10.0 version of this repository](https://github.com/okta/samples-js-angular-1/tree/1.10).
+>
+> Please continue to visit https://developer.okta.com to learn about new documentation and sample applications.
 
 ## Using the built-in Express server
 
@@ -54,11 +43,11 @@ To run this sample:
 4. In a different terminal window, run the Express server.
 
     ```bash
-    # Starts the sample back-end on http://localhost:3000
+    # Starts the sample back-end on http://localhost:8080
     [samples-js-angular-1]$ npm start
     ```
 
-5. You're all set! Open a browser window to [http://localhost:3000](http://localhost:3000).
+5. You're all set! Open a browser window to [http://localhost:8080](http://localhost:8080).
 > Note:
 Use chrome browser if you're running the mock-okta server, to test the sample.
 
@@ -67,8 +56,8 @@ You can create your own Okta org by signing up for a [free Developer Account](ht
 
 If you'd like to test this sample against your own Okta org, navigate to the Okta Developer Dashboard and follow these steps:
 
-1. Create a new **Web** application by clicking **Add Application** and selecting **Web** from the *Applications* page.		
-2. After accepting the default configuration, click **Done** to redirect back to the *General Settings* of your application.		
+1. Create a new **Web** application by clicking **Add Application** and selecting **Web** from the *Applications* page.
+2. After accepting the default configuration, click **Done** to redirect back to the *General Settings* of your application.
 3. Copy the **Client ID** and **Client Secret**, as it will be needed for the client configuration.
 4. Finally, navigate to `https://{yourOktaDomain}.com/api/v1/authorizationServers/default` to see if the [Default Authorization Server](https://developer.okta.com/docs/api/resources/oauth2.html#using-the-default-authorization-server) is setup. If not, [let us know](mailto:developers@okta.com).
 Then, replace the *oidc* settings in `.samples.config.json` to point to your new app:
@@ -80,24 +69,24 @@ Then, replace the *oidc* settings in `.samples.config.json` to point to your new
     "issuer": "https://{{yourOktaDomain}}.com/oauth2/default",
     "clientId": "{{yourClientId}}",
     "clientSecret": "{{yourClientSecret}}",
-    "redirectUri": "http://localhost:3000/authorization-code/callback"
+    "redirectUri": "http://localhost:8080/authorization-code/callback"
   }
 }
 ```
 
 Stop the mock-okta server and Express server if you're running it.
- 
+
 Open a new terminal window, and run the Express server.
-   
+
    ```bash
-   # Starts the sample back-end on http://localhost:3000
+   # Starts the sample back-end on http://localhost:8080
    [samples-js-angular-1]$ npm start
    ```
-   
-You're all set! Open a browser window to [http://localhost:3000](http://localhost:3000).
+
+You're all set! Open a browser window to [http://localhost:8080](http://localhost:8080).
 
 
-## Support 
+## Support
 
 Have a question or see a bug? Email developers@okta.com. For feature requests, feel free to open an issue on this repo. If you find a security vulnerability, please follow our [Vulnerability Reporting Process](https://www.okta.com/vulnerability-reporting-policy/).
 
