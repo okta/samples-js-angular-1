@@ -1,9 +1,6 @@
 {
   "name": "@okta/samples-js-angular-1",
   "version": "1.11.0",
-  "publishConfig": {
-    "registry": "https://artifacts.aue1d.saasure.com/artifactory/api/npm/npm-okta"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/okta/samples-js-angular-1.git"
@@ -19,8 +16,6 @@
     "lint": "eslint --ignore-path .gitignore .",
     "build": "webpack --config webpack.config.js",
     "start": "node tools/dev-server",
-    "ci-update-package": "ci-update-package",
-    "ci-pkginfo:dataload": "ci-pkginfo -t dataload",
     "wrap": "node tools/wrap-dependencies",
     "test:e2e": "webdriver-manager update && protractor test/e2e/conf.js"
   },
@@ -43,10 +38,6 @@
     "highlight.js": "9.9.0",
     "semantic-ui-css": "2.2.4",
     "webpack": "1.13.3"
-  },
-  "optionalDependencies": {
-    "@okta/ci-update-package": "1.4.0",
-    "@okta/ci-pkginfo": "1.2.0"
   },
   "devDependencies": {
     "chalk": "1.1.3",
