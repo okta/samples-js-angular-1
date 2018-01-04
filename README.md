@@ -24,27 +24,26 @@ To run this sample:
 1. Clone this repository and navigate to the new directory.
 
     ```bash
-    $ git clone git@github.com:okta/samples-js-angular-1.git && cd samples-js-angular-1
+    git clone git@github.com:okta/samples-js-angular-1.git
+    cd samples-js-angular-1
     ```
 
 2. Install the required dependencies.
 
     ```bash
-    [samples-js-angular-1]$ npm install
+    npm install
     ```
 
 3. Run the mock Okta server. If you're interested in testing this sample against your own Okta org, follow the steps in the [Express Quick Start](https://github.com/okta/samples-nodejs-express-4#quick-start).
 
     ```bash
-    # Starts the mock-okta server at http://127.0.0.1:7777
-    [samples-js-angular-1]$ npm run mock-okta
+    npm run mock-okta
     ```
 
 4. In a different terminal window, run the Express server.
 
     ```bash
-    # Starts the sample back-end on http://localhost:8080
-    [samples-js-angular-1]$ npm start
+    npm start
     ```
 
 5. You're all set! Open a browser window to [http://localhost:8080](http://localhost:8080).
@@ -79,8 +78,7 @@ Stop the mock-okta server and Express server if you're running it.
 Open a new terminal window, and run the Express server.
 
    ```bash
-   # Starts the sample back-end on http://localhost:8080
-   [samples-js-angular-1]$ npm start
+   npm start
    ```
 
 You're all set! Open a browser window to [http://localhost:8080](http://localhost:8080).
