@@ -64,6 +64,6 @@
     "request": "^2.83.0",
     "wait-on": "2.0.2",
     "webpack-dev-server": "^2.11.0",
-    "yakbak": "^2.6.0"
+    "yakbak": "^3.0.0"
   }
 }
