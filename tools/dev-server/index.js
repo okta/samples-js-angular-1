@@ -65,11 +65,13 @@ new WebpackDevServer(webpack(webpackConfig), {
     // Wait to start listening until ExpressOIDC is ready.
     oidc.on('ready', () => {
       app.listen(config.server.port, () => {
+        /* eslint-disable no-console */
         console.log(`Express server started on http://localhost:${config.server.port}`);
       });
     });
 
     oidc.on('error', (err) => {
+      /* eslint-disable no-console */
       console.log('Unable to configure ExpressOIDC', err);
     });
   },
