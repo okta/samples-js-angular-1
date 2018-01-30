@@ -6,4 +6,4 @@ source $OKTA_HOME/$REPO/scripts/setup.sh
 
 echo "Selenium tests for this repo are now run through Travis"
 
-exit $PUBLISH_TYPE_AND_RESULT_DIR;
+exit 0;
