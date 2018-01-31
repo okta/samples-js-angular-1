@@ -2,8 +2,11 @@
 
 cd ${OKTA_HOME}/${REPO}
 
-# Use newer, faster npm
-npm install -g npm@4.1.2
+# Use latest version of Node
+setup_service node v8.1.1
+
+# Use latest NPM
+npm install -g npm@latest
 
 # Install required dependencies
 npm install -g @okta/ci-update-package
