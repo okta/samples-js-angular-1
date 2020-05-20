@@ -1,37 +1,25 @@
-#!/bin/bash -vx
+#!/bin/bash
 
-source $OKTA_HOME/$REPO/scripts/setup.sh
-
-REGISTRY="${ARTIFACTORY_URL}/api/npm/npm-okta"
+source ${OKTA_HOME}/${REPO}/scripts/setup.sh
 
 export TEST_SUITE_TYPE="build"
+export REGISTRY="${ARTIFACTORY_URL}/api/npm/npm-topic"
 
-if [ -n "$action_branch" ];
-then
-  echo "Publishing from bacon task using branch $action_branch"
-  TARGET_BRANCH=$action_branch
-else
-  echo "Publishing from bacon testSuite using branch $BRANCH"
-  TARGET_BRANCH=$BRANCH
-fi
+# Install required dependencies
+export PATH="${PATH}:$(yarn global bin)"
+yarn global add @okta/ci-append-sha
 
-if ! ci-update-package --branch ${TARGET_BRANCH}; then
-  echo "ci-update-package failed! Exiting..."
+if ! ci-append-sha; then
+  echo "ci-append-sha failed! Exiting..."
   exit $FAILED_SETUP
 fi
 
-# Remove shrinkwrap before publishing - in new versions of npm the shrinkwrap
-# is included in package.json (which results in extraneous modules downstream)
-rm $OKTA_HOME/$REPO/npm-shrinkwrap.json
-if ! npm publish --registry ${REGISTRY}; then
+# Update default regsitry before publishing
+npm config set @okta:registry ${REGISTRY}
+
+if ! npm publish --unsafe-perm; then
   echo "npm publish failed! Exiting..."
-  exit $PUBLISH_ARTIFACTORY_FAILURE
+  exit ${PUBLISH_ARTIFACTORY_FAILURE}
 fi
 
-DATALOAD=$(ci-pkginfo -t dataload)
-if ! artifactory_curl -X PUT -u ${ARTIFACTORY_CREDS} ${DATALOAD} -v -f; then
-  echo "artifactory_curl failed! Exiting..."
-  exit $PUBLISH_ARTIFACTORY_FAILURE
-fi
-
-exit $SUCCESS
+exit ${SUCCESS}
