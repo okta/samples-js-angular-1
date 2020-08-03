@@ -1,7 +1,13 @@
-Angular 1 Samples
+Angular 1 Samples (Deprecated)
 ======
+  
+Note: This repository is **Deprecated**.
 
-## Table of Contents
+Okta is not offering updates to this AngularJS (Angular 1) sample.  
+* Our supported modern Angular SDK: https://github.com/okta/okta-oidc-js/tree/master/packages/okta-angular
+* Samples using our Angular SDK: https://github.com/okta/samples-js-angular
+
+## Table of Contents (Deprecated)
 
   - [Introduction](#introduction)
   - [Using the built-in Express server](#using-the-built-in-express-server)
@@ -13,7 +19,7 @@ Angular 1 Samples
 
 This repository contains the Angular 1 front-end code that can be used along with back-end server samples.
 
-> Note: This Angular sample application is currently only compatible with our [Express Sample Application](https://github.com/okta/samples-nodejs-express-4).  If you are using a different sample for the back-end or resource server, please check out the [1.10.0 version of this repository](https://github.com/okta/samples-js-angular-1/tree/1.10).
+> Note: This Angular sample application is only compatible with our [Express Sample Application](https://github.com/okta/samples-nodejs-express-4).  If you are using a different sample for the back-end or resource server, please check out the [1.10.0 version of this repository](https://github.com/okta/samples-js-angular-1/tree/1.10).
 >
 > Please continue to visit https://developer.okta.com to learn about new documentation and sample applications.
 
