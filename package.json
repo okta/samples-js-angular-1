@@ -57,7 +57,7 @@
     "forever-monitor": "1.7.1",
     "jasmine-reporters": "2.2.0",
     "jws": "3.1.4",
-    "minimist": "1.2.0",
+    "minimist": "1.2.3",
     "mustache": "2.2.1",
     "oidc-token-hash": "^1.0.0",
     "pem-jwk": "1.5.1",
