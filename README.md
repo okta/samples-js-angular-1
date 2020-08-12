@@ -4,8 +4,10 @@ Angular 1 Samples (Deprecated)
 Note: This repository is **Deprecated**.
 
 Okta is not offering updates to this AngularJS (Angular 1) sample.  
-* Our supported modern Angular SDK: https://github.com/okta/okta-oidc-js/tree/master/packages/okta-angular
-* Samples using our Angular SDK: https://github.com/okta/samples-js-angular
+- Our supported modern Angular SDK: https://github.com/okta/okta-oidc-js/tree/master/packages/okta-angular
+- Samples using our Angular SDK: https://github.com/okta/samples-js-angular
+- For those continuing to use AngularJs (Angular 1), you can use our okta-auth-js library to build your components:
+  - https://github.com/okta/okta-auth-js
 
 ## Table of Contents (Deprecated)
 
