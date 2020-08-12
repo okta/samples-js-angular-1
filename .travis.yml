@@ -1,1 +1,6 @@
-# Empty as this repo is deprecated and will not pass tests
+language: node_js
+node_js:
+- '8.4.0'
+install:
+script:
+  # Disabling tests as repo is deprecated
