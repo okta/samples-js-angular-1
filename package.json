@@ -25,7 +25,7 @@
   "dependencies": {
     "@okta/oidc-middleware": "0.0.2",
     "@okta/okta-signin-widget": "^2.5.0",
-    "angular": "1.6.7",
+    "angular": "1.8.0",
     "angular-ui-router": "1.0.0-beta.3",
     "babel-core": "6.18.2",
     "babel-loader": "6.2.7",
